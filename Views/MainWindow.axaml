@@ -1,0 +1,22 @@
+<!-- Views/MainWindow.axaml -->
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:MonJeu.ViewModels"
+        x:Class="MonJeu.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Title="MonJeu">
+
+    <Grid ColumnDefinitions="180,*">
+      <!-- Menu de Navigation -->
+      <StackPanel Grid.Column="0" Margin="8" Spacing="8">
+        <Button Content="Accueil" Command="{Binding NavigateToHomeCommand}" HorizontalAlignment="Stretch"/>
+        <Button Content="Paramètres" Command="{Binding NavigateToSettingsCommand}" HorizontalAlignment="Stretch"/>
+        <Button Content="Choisir le niveau" Command="{Binding NavigateToSettingsCommand}" HorizontalAlignment="Stretch"/>
+      </StackPanel>
+
+      <!-- Zone de contenu principale à droite -->
+      <Border Grid.Column="1" Margin="0,8,8,8" CornerRadius="8" Background="#fbfbfb">
+        <ContentControl Content="{Binding CurrentViewModel}" Margin="10"/>
+      </Border>
+    </Grid>
+</Window>

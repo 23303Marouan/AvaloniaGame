@@ -1,0 +1,47 @@
+<!-- Views/SettingsView.axaml -->
+
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:MonJeu.ViewModels"
+             x:Class="MonJeu.Views.SettingsView"
+             x:DataType="vm:SettingsViewModel">
+
+    <StackPanel HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Spacing="10">
+
+        <TextBlock Text="{Binding InfoText}"
+                   FontSize="20"
+                   FontWeight="Bold"/>
+
+        <CheckBox Content="Activer / désactiver le son"
+          IsChecked="{Binding SoundEnabled}"/>
+
+        <CheckBox Content="Activer la musique"
+                IsChecked="{Binding MusicEnabled}"/>
+
+        <CheckBox Content="Afficher les effets visuels"
+                IsChecked="{Binding VisualEffectsEnabled}"/>
+
+        <CheckBox Content="Mode plein écran"
+                IsChecked="{Binding FullscreenEnabled}"/>
+
+        <CheckBox Content="Mode sombre"
+                IsChecked="{Binding DarkModeEnabled}"/>
+
+        <TextBlock Text="Langue / Language"
+                   FontSize="18"
+                   FontWeight="Bold"/>
+
+        <ComboBox SelectedIndex="0"
+                  Width="200"
+                  HorizontalAlignment="Left">
+
+            <ComboBoxItem Content="Français"/>
+            <ComboBoxItem Content="English"/>
+
+        </ComboBox>
+
+    </StackPanel>
+
+</UserControl>
