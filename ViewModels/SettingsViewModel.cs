@@ -1,6 +1,10 @@
 // ViewModels/SettingsViewModel.cs
 
 using CommunityToolkit.Mvvm.ComponentModel;
+using Avalonia;
+using Avalonia.Styling;
+using System;
+
 
 namespace MonJeu.ViewModels;
 
@@ -9,10 +13,10 @@ public partial class SettingsViewModel : ViewModelBase
     public string InfoText => "Paramètres / Réglages";
 
     [ObservableProperty]
-    private bool soundEnabled = true;
+    private double soundVolume = 100;
 
     [ObservableProperty]
-    private bool musicEnabled = true;
+    private double musicVolume = 100;
 
     [ObservableProperty]
     private bool visualEffectsEnabled = true;
@@ -22,4 +26,23 @@ public partial class SettingsViewModel : ViewModelBase
 
     [ObservableProperty]
     private bool darkModeEnabled = false;
+
+    partial void OnDarkModeEnabledChanged(bool value)
+    {
+        if (value == true){
+            Application.Current!.RequestedThemeVariant = ThemeVariant.Dark;
+        }
+        else{
+            Application.Current!.RequestedThemeVariant = ThemeVariant.Light;
+        }
+    }
+        partial void OnSoundVolumeChanged(double value)
+    {
+        Console.WriteLine($"Nouveau volume : {value}%");
+    }
+        partial void OnMusicVolumeChanged(double value)
+    {
+        Console.WriteLine($"Nouveau volume : {value}%");
+    }
+
 }

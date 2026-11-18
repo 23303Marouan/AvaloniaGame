@@ -1,0 +1,30 @@
+<!-- Views/SettingsView.axaml -->
+
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:MonJeu.ViewModels"
+             x:Class="MonJeu.Views.LevelsView"
+             x:DataType="vm:LevelsViewModel">
+
+    <StackPanel HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Spacing="15">
+
+        <TextBlock Text="Choisissez le niveau de dificulté"
+                   FontSize="18"
+                   FontWeight="Bold"/>
+
+        <ComboBox SelectedIndex="0"
+                  Width="200"
+                  HorizontalAlignment="Left">
+
+            <ComboBoxItem Content="Facile"/>
+            <ComboBoxItem Content="Normale"/>
+            <ComboBoxItem Content="Dificile"/>
+
+        </ComboBox>
+
+    </StackPanel>
+
+</UserControl>
+

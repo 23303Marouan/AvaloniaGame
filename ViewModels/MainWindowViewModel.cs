@@ -4,6 +4,7 @@ using CommunityToolkit.Mvvm.Input;
 using CommunityToolkit.Mvvm.Messaging;
 using MonJeu.Messages;
 
+
 namespace MonJeu.ViewModels;
 
 public partial class MainWindowViewModel : ViewModelBase, IRecipient<NavigationMessage>
@@ -13,6 +14,7 @@ public partial class MainWindowViewModel : ViewModelBase, IRecipient<NavigationM
 
     private readonly HomeViewModel _homeViewModel;
     private readonly SettingsViewModel _settingsViewModel;
+    private readonly LevelsViewModel _levelsViewModel;
     private readonly IMessenger _messenger;
 
     public MainWindowViewModel(IMessenger messenger)
@@ -23,7 +25,7 @@ public partial class MainWindowViewModel : ViewModelBase, IRecipient<NavigationM
         // Passer le messenger aux ViewModels qui en ont besoin
         _homeViewModel = new HomeViewModel(_messenger);
         _settingsViewModel = new SettingsViewModel();
-
+        _levelsViewModel = new LevelsViewModel();
         _currentViewModel = _homeViewModel;
     }
 
@@ -44,4 +46,11 @@ public partial class MainWindowViewModel : ViewModelBase, IRecipient<NavigationM
     {
         _messenger.Send(new NavigationMessage(_settingsViewModel));
     }
+
+    [RelayCommand]
+    private void NavigateToLevels()
+    {
+        _messenger.Send(new NavigationMessage(_levelsViewModel));
+    }
 }
+

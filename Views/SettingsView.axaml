@@ -1,5 +1,4 @@
 <!-- Views/SettingsView.axaml -->
-
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:vm="using:MonJeu.ViewModels"
@@ -8,38 +7,56 @@
 
     <StackPanel HorizontalAlignment="Center"
                 VerticalAlignment="Center"
-                Spacing="10">
+                Spacing="15">
 
-        <TextBlock Text="{Binding InfoText}"
-                   FontSize="20"
+        <TextBlock Text="PARAMÈTRES"
+                   FontSize="26"
                    FontWeight="Bold"/>
 
-        <CheckBox Content="Activer / désactiver le son"
-          IsChecked="{Binding SoundEnabled}"/>
+        <!-- Volume des effets sonores -->
+        <TextBlock Text="Volume des effets sonores"/>
 
-        <CheckBox Content="Activer la musique"
-                IsChecked="{Binding MusicEnabled}"/>
+        <StackPanel Orientation="Horizontal" Spacing="5">
+                <Slider Minimum="0"
+                        Maximum="100"
+                        Value="{Binding SoundVolume}"
+                        Width="200"/>
 
+                <TextBlock Text="{Binding SoundVolume, StringFormat='{}{0:0}%'}"
+                        VerticalAlignment="Center"/>
+        </StackPanel>
+
+        <!-- Volume de la musique -->
+        <TextBlock Text="Volume de la musique"/>
+
+        <StackPanel Orientation="Horizontal" Spacing="5">
+                <Slider Minimum="0"
+                        Maximum="100"
+                        Value="{Binding MusicVolume}"
+                        Width="200"/>
+
+                <TextBlock Text="{Binding MusicVolume, StringFormat='{}{0:0}%'}"
+                        VerticalAlignment="Center"/>
+        </StackPanel>
+
+        <!-- Autres paramètres -->
         <CheckBox Content="Afficher les effets visuels"
-                IsChecked="{Binding VisualEffectsEnabled}"/>
+                  IsChecked="{Binding VisualEffectsEnabled}"/>
 
         <CheckBox Content="Mode plein écran"
-                IsChecked="{Binding FullscreenEnabled}"/>
+                  IsChecked="{Binding FullscreenEnabled}"/>
 
         <CheckBox Content="Mode sombre"
-                IsChecked="{Binding DarkModeEnabled}"/>
+                  IsChecked="{Binding DarkModeEnabled}"/>
 
         <TextBlock Text="Langue / Language"
                    FontSize="18"
                    FontWeight="Bold"/>
 
         <ComboBox SelectedIndex="0"
-                  Width="200"
-                  HorizontalAlignment="Left">
-
+                  Width="200">
             <ComboBoxItem Content="Français"/>
             <ComboBoxItem Content="English"/>
-
         </ComboBox>
 
     </StackPanel>
