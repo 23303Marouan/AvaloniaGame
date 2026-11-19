@@ -18,8 +18,7 @@
                 Command="{Binding NavigateToHomeCommand}">
           <ic:FluentIcon Icon="Home"
                    IconVariant="Regular"
-                   FontSize="28"
-                   Foreground="black"/>         
+                   FontSize="28"/>         
         </Button>
        
         <Button Background="Transparent"
@@ -28,8 +27,7 @@
                 Command="{Binding NavigateToSettingsCommand}">
           <ic:FluentIcon Icon="Settings"
                    IconVariant="Regular"
-                   FontSize="28"
-                   Foreground="black"/>         
+                   FontSize="28"/>         
         </Button>
         
         <Button Content="Choisir le niveau" Command="{Binding NavigateToLevelsCommand}" HorizontalAlignment="Stretch"/>
