@@ -38,11 +38,11 @@ public partial class SettingsViewModel : ViewModelBase
     }
         partial void OnSoundVolumeChanged(double value)
     {
-        Console.WriteLine($"Nouveau volume : {value}%");
+        Console.WriteLine($"Volume du son : {value}%");
     }
         partial void OnMusicVolumeChanged(double value)
     {
-        Console.WriteLine($"Nouveau volume : {value}%");
+        Console.WriteLine($"Volume de la musique: {value}%");
     }
 
 }

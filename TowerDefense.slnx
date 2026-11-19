@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="MonJeu.Core/MonJeu.Core.csproj" />
+  <Project Path="MonJeu.Tests/MonJeu.Tests.csproj" />
+  <Project Path="MonJeu/MonJeu.csproj" />
+</Solution>
