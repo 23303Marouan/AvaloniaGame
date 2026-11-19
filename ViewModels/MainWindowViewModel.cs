@@ -23,8 +23,8 @@ public partial class MainWindowViewModel : ViewModelBase, IRecipient<NavigationM
         _messenger.Register<NavigationMessage>(this); // S'abonner aux messages
 
         // Passer le messenger aux ViewModels qui en ont besoin
-        _homeViewModel = new HomeViewModel(_messenger);
         _settingsViewModel = new SettingsViewModel();
+        _homeViewModel = new HomeViewModel(_messenger, _settingsViewModel);
         _levelsViewModel = new LevelsViewModel();
         _currentViewModel = _homeViewModel;
     }
